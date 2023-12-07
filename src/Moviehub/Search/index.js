@@ -15,20 +15,21 @@ function Search() {
 
 
     const handleSearch = async () => {
-
-        try {
-            const response = await axios.get(`https://moviesdatabase.p.rapidapi.com/titles/search/keyword/${searchField}`, {
-                // params: {keyword: searchField },
-                headers: {
-                    'X-RapidAPI-Key': '41770f2d7amsh70d8657dc3c363fp1aff05jsn06ad5e44d716',
-                    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-                },
-            });
-
-            setMovies(response.data.results);
-            console.log(movies);
-        } catch (error) {
-            console.error('Error fetching data:', error);
+        if (searchField !== "") {
+            try {
+                const response = await axios.get(`https://moviesdatabase.p.rapidapi.com/titles/search/keyword/${searchField}`, {
+                    // params: {keyword: searchField },
+                    headers: {
+                        'X-RapidAPI-Key': '41770f2d7amsh70d8657dc3c363fp1aff05jsn06ad5e44d716',
+                        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
+                    },
+                });
+    
+                setMovies(response.data.results);
+                console.log(movies);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         }
     };
     useEffect(() => {
@@ -63,7 +64,7 @@ function Search() {
                             }}
                             className="list-group-item">
 
-                            <div class="card" className="m-3 border border-2 border-secondary" style={{width: "203px"}}>
+                            <div className="m-3 border border-2 border-secondary" style={{width: "203px"}}>
                                 {(movie.primaryImage === null || movie.primaryImage.url === null) ? (
                                     <img src={noImg} style={{ width: "200px", height: "250px" }}></img>
                                 ) : (
