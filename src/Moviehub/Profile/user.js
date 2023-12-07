@@ -52,7 +52,7 @@ function UserProfile() {
             const status = await client.createUserFollowsUser(account._id, username, account.username);
             setIsFollowed(true);
             alert('You followed this user!');
-            window.location.reload();
+            fetchUser();
         } catch (err) {
             console.log(err);
         }
