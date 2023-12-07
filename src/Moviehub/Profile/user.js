@@ -63,7 +63,7 @@ function UserProfile() {
             const status = await client.deleteUserFollowsUser(account._id, username);
             setIsFollowed(false);
             alert('You unfollowed this user.');
-            window.location.reload();
+            fetchUser();
         } catch (err) {
             console.log(err);
         }
