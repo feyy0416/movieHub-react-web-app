@@ -10,9 +10,10 @@ import UserTable from "./Profile/userTable";
 import MovieDetail from "./MovieDetail";
 import UserProfile from "./Profile/user";
 // import { Provider } from "react-redux";
-// import axios from "axios";
+import axios from "axios";
 
 function Moviehub() {
+    axios.defaults.withCredentials=true;
     return (
         <div>
             <TopNavigation />

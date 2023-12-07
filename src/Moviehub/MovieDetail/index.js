@@ -223,7 +223,7 @@ function MovieDetail() {
                                                     <BsPencil className="text-white" onClick={() => selectComment(comment)} /></button>
                                             ) : null}
 
-                                            {account.role === "ADMIN" || account.username === comment.username ? (
+                                            {account.role === "ADMIN" || account.role === "COMMENT_MANAGER" || account.username === comment.username ? (
                                                 <button className={"btn p-1"} style={{ marginBottom: "6px" }}>
                                                     <BsTrash3Fill className="text-white" onClick={() => deleteComment(comment)} /></button>
                                             ) : null}

@@ -40,16 +40,16 @@ function Home() {
                             }}
                             className="list-group-item">
 
-                            <div class="card" className="m-3 border border-2 border-secondary" style={{ width: "203px" }}>
+                            <div className="card m-3 border border-2 border-secondary" style={{ width: "203px" }}>
                                 {(movie.primaryImage === null || movie.primaryImage.url === null) ? (
                                     <img src={noImg} style={{ width: "200px", height: "250px" }}></img>
                                 ) : (
                                     <img src={movie.primaryImage.url} style={{ width: "200px", height: "250px" }}></img>
                                 )
                                 }
-                                <div class="card-body" style={{ backgroundColor: "#F5F5F5" }}>
-                                    <h5 class="card-title text-truncate ms-2" style={{ color: "#808080" }}>{movie.originalTitleText.text}</h5>
-                                    <p class="card-text text-truncate ms-2" style={{ color: "#808080" }}>{movie.releaseYear ? movie.releaseYear.year : 'Unavailable'}</p>
+                                <div className="card-body" style={{ backgroundColor: "#F5F5F5" }}>
+                                    <h5 className="card-title text-truncate ms-2" style={{ color: "#808080" }}>{movie.originalTitleText.text}</h5>
+                                    <p className="card-text text-truncate ms-2" style={{ color: "#808080" }}>{movie.releaseYear ? movie.releaseYear.year : 'Unavailable'}</p>
                                 </div>
                             </div>
                         </Link>

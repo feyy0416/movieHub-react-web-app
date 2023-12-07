@@ -51,7 +51,16 @@ function MyProfile() {
                 <div>
                     <div>
                         <p className="fw-bold fs-2">Welcome! {account.username} </p>
-                        <label htmlFor="password">Password:</label>
+                        <label htmlFor="firstName">Your role:</label>
+                        <input
+                            id="role"
+                            value={account.role}
+                            className="form-control mt-2"
+                            placeholder="role"
+                            readOnly
+                        />
+
+                        <label htmlFor="password" className="mt-2">Password:</label>
                         <input
                             id="password"
                             value={account.password}

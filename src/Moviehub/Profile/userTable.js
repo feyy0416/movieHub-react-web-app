@@ -70,6 +70,7 @@ function UserTable() {
                             <select value={user.role} className="form-select" onChange={(e) => setUser({ ...user, role: e.target.value })}>
                                 <option value="USER">User</option>
                                 <option value="ADMIN">Admin</option>
+                                <option value="COMMENT_MANAGER">Comment Manager</option>
                             </select>
                         </td>
                         <td className="text-nowrap">
