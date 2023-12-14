@@ -131,6 +131,7 @@ function MovieDetail() {
     const handleUpdate = async () => {
         try {
             const status = await client.updateComment(comment);
+            setComment({ ...comment, content: "" });
         } catch (err) {
             console.log(err);
         }
